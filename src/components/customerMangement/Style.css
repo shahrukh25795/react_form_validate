@@ -58,4 +58,9 @@
     font-size: 15px;
     font-weight: bold;
     margin:auto;
+    cursor: pointer;
+}
+button:disabled{
+    opacity: 0.5;
+    cursor:not-allowed;
 }

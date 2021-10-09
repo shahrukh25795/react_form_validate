@@ -22,7 +22,6 @@ export type AddressType = {
 
 export type IdentificationType = {
     residentialProof: string;
-    residentialProofID: string;
     idNumber: string;
     idState: string;
 }

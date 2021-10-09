@@ -30,14 +30,14 @@ const PersonalDetails = (props: PersonalDetailsProps) => {
             </div>
             <div className="row">
                 <InputField
-                    label="Email"
+                    label="Email Address"
                     value={personalDetailsFormData?.emailAddress}
                     onChange={(evt) => onChange("emailAddress", evt.target.value)}
                     id="email"
                     type="email"
                 />
                 <InputField
-                    label="Mobile Number"
+                    label="Phone Number"
                     value={personalDetailsFormData?.phoneNumber}
                     onChange={(evt) => onChange("phoneNumber", evt.target.value)}
                     id="mobile_number"
@@ -46,17 +46,18 @@ const PersonalDetails = (props: PersonalDetailsProps) => {
             </div>
             <div className="row">
                 <InputField
-                    label="Date of birth"
+                    label="Date of Birth"
                     value={personalDetailsFormData?.dateOfBirth}
                     onChange={(evt) => onChange("dateOfBirth", evt.target.value)}
                     id="d_o_b"
                     type="date"
                 />
                 <InputField
-                    label="Social Security / Tin Number"
+                    label="Social Security / ITINNumber"
                     value={personalDetailsFormData?.socialSecurity}
                     onChange={(evt) => onChange("socialSecurity", evt.target.value)}
                     id="social_security"
+                    type="number"
                 />
             </div>
         </div>

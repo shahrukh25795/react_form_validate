@@ -5,12 +5,14 @@ import PersonalDetails from './UI/PersonalDetails'
 import "./Style.css"
 import { addCustomerForm } from '../data/formData'
 import { SubmitDataType, CustomerDetailType } from '../../utils/types'
+import { checkValuesExist } from '../../utils/Validator'
 
 interface AddCustomerProps { }
 
 const AddCustomer = (props: AddCustomerProps) => {
 
     const [formData, setFormData] = React.useState<SubmitDataType>({ ...addCustomerForm });
+    const [isDisabled, setIsDisabled] = React.useState<boolean>(true);
 
     const updateValue = (key: string, value: string, type: CustomerDetailType) => {
         let data: SubmitDataType = { ...formData };
@@ -19,6 +21,8 @@ const AddCustomer = (props: AddCustomerProps) => {
         item[key] = value;
         // @ts-ignore
         data[type] = item;
+        const isValid = checkValuesExist(data);
+        setIsDisabled(!isValid);
         setFormData(data)
     }
 
@@ -47,7 +51,7 @@ const AddCustomer = (props: AddCustomerProps) => {
                 />
             </div>
             <div className="btn-wrapper">
-                <button type="button" onClick={handleSubmit} className="btn">Appay Now</button>
+                <button disabled={isDisabled} type="button" onClick={handleSubmit} className="btn">Appay Now</button>
             </div>
         </div>
     )

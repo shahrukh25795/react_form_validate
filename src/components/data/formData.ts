@@ -17,7 +17,6 @@ export const addCustomerForm: SubmitDataType = {
     },
     identification: {
         residentialProof: "",
-        residentialProofID: "",
         idNumber: "",
         idState: "",
     }

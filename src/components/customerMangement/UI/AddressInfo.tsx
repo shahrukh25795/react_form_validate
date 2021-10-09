@@ -28,12 +28,14 @@ const Address = (props: AddressProps) => {
                         value={addressInfoFormData?.apartmentNumber}
                         onChange={(evt) => onChange("apartmentNumber", evt.target.value)}
                         id="apartment_number"
+                        type="number"
                     />
                     <InputField
                         label="ZipCode"
                         value={addressInfoFormData?.zipCode}
                         onChange={(evt) => onChange("zipCode", evt.target.value)}
                         id="zip_code"
+                        type="number"
                     />
                 </div>
                 <InputField
