@@ -29,6 +29,7 @@
     width: 45% ;
     background-color: #FCFCFC;
     padding: 5px 15px;
+    overflow: hidden;
 }
 .input-box label{
     font-size: 12px;
