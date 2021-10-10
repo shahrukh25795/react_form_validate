@@ -5,7 +5,7 @@ import PersonalDetails from './UI/PersonalDetails'
 import "./Style.css"
 import { addCustomerForm } from '../data/formData'
 import { SubmitDataType, CustomerDetailType } from '../../utils/types'
-import { checkValuesExist } from '../../utils/Validator'
+import { checkValuesExist, validateEmail, validatePhoneNum } from '../../utils/Validator'
 
 interface AddCustomerProps { }
 
@@ -25,12 +25,23 @@ const AddCustomer = (props: AddCustomerProps) => {
         data[type] = item;
         const isValid = checkValuesExist(data); //this line retun ture if all values are filled
         setIsDisabled(!isValid);
-        setFormData(data)
+        setFormData(data);
     }
 
     //handle form data submitting
     const handleSubmit = () => {
-        console.log(formData, "formData")
+        if (!validateEmail(formData?.personalDetails?.emailAddress)) {
+            alert("Email is not valid.")
+            return true
+        }
+        if (!validatePhoneNum(formData?.personalDetails?.phoneNumber)) {
+            alert("Phone number is not valid")
+            return true
+        }
+
+        //Here need to call API
+        alert("Form data validate successfully!")
+        console.table(formData)
     }
 
     return (

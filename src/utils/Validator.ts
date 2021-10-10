@@ -21,3 +21,9 @@ export const validateEmail = (value: string): boolean => {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailPattern.test(value);
 };
+
+//check phone number is valid or not
+export const validatePhoneNum = (value: string): boolean => {
+    const phonePattern = /^(\+\d{1,3}[- ]?)?\d{10}$/;
+    return phonePattern.test(value);
+};
