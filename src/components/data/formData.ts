@@ -1,5 +1,7 @@
 import { SubmitDataType } from "../../utils/types";
 
+
+//add customer form config
 export const addCustomerForm: SubmitDataType = {
     personalDetails: {
         firstName: "",

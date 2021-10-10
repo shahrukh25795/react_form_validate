@@ -15,7 +15,7 @@ const Identifications = (props: IdentificationsProps) => {
     return (
         <div className="">
             <h4 className="heading">Persional Details</h4>
-            <div className="row">
+            <div className="row radio-wrapper">
                 <RadioInput
                     label="Driver Licence"
                     value="Driver Licence"
@@ -30,8 +30,6 @@ const Identifications = (props: IdentificationsProps) => {
                     id="non_driver"
                     checked={identificationsFormData?.residentialProof === "Non Driver / State ID"}
                 />
-            </div>
-            <div className="row">
                 <RadioInput
                     label="US Military"
                     value="US Military"

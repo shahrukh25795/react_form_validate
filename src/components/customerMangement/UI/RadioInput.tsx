@@ -14,7 +14,7 @@ const RadioInput = (props: RadioInputProps) => {
     const { id, label, value, onChange, name = "residential_proof", checked } = props
 
     return (
-        <div className="">
+        <div className="radio-box">
             <input
                 type="radio"
                 id={id}
@@ -22,7 +22,13 @@ const RadioInput = (props: RadioInputProps) => {
                 value={value}
                 checked={checked}
                 onChange={onChange}
-            /><label htmlFor={id}>{label}</label>
+                style={{ display: "none" }}
+                className="radio-input"
+            />
+            <label className="radio-label" htmlFor={id}>
+                <span className="dot" />
+                <span className="name">{label}</span>
+            </label>
         </div>
     )
 }

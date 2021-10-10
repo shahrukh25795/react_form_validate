@@ -11,9 +11,11 @@ interface AddCustomerProps { }
 
 const AddCustomer = (props: AddCustomerProps) => {
 
-    const [formData, setFormData] = React.useState<SubmitDataType>({ ...addCustomerForm });
-    const [isDisabled, setIsDisabled] = React.useState<boolean>(true);
 
+    const [formData, setFormData] = React.useState<SubmitDataType>({ ...addCustomerForm }); //initialize form values
+    const [isDisabled, setIsDisabled] = React.useState<boolean>(true); //using for managing button disable/anable state
+
+    //here updating input value
     const updateValue = (key: string, value: string, type: CustomerDetailType) => {
         let data: SubmitDataType = { ...formData };
         let item = data[type];
@@ -21,11 +23,12 @@ const AddCustomer = (props: AddCustomerProps) => {
         item[key] = value;
         // @ts-ignore
         data[type] = item;
-        const isValid = checkValuesExist(data);
+        const isValid = checkValuesExist(data); //this line retun ture if all values are filled
         setIsDisabled(!isValid);
         setFormData(data)
     }
 
+    //handle form data submitting
     const handleSubmit = () => {
         console.log(formData, "formData")
     }
